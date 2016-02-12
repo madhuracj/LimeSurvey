@@ -1,4 +1,4 @@
-<p><input type='submit' value='<?php eT("Save"); ?>' />
+<p>
  <input type='hidden' name='id' value='<?php echo $id; ?>' />
  <input type='hidden' name='sid' value='<?php echo $surveyid; ?>' />
  <input type='hidden' name='subaction' value='update' />

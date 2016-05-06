@@ -2102,6 +2102,9 @@ function createFieldMap($surveyid, $style='short', $force_refresh=false, $questi
                     $fieldmap[$fieldname]['questionSeq']=$questionSeq;
                     $fieldmap[$fieldname]['groupSeq']=$groupSeq;
                     $fieldmap[$fieldname]['SQrelevance']=$abrow['relevance'];
+                    if (isset($defaultValues[$arow['qid'].'~'.$abrow['qid']])) {
+                        $fieldmap[$fieldname]['defaultvalue'] = $defaultValues[$arow['qid'].'~'.$abrow['qid']];
+                    }
                 }
 
                 $fieldname="{$arow['sid']}X{$arow['gid']}X{$arow['qid']}{$abrow['title']}#1";
@@ -2119,6 +2122,9 @@ function createFieldMap($surveyid, $style='short', $force_refresh=false, $questi
                     $fieldmap[$fieldname]['usedinconditions']=$usedinconditions;
                     $fieldmap[$fieldname]['questionSeq']=$questionSeq;
                     $fieldmap[$fieldname]['groupSeq']=$groupSeq;
+                    if (isset($defaultValues[$arow['qid'].'~'.$abrow['qid']])) {
+                        $fieldmap[$fieldname]['defaultvalue'] = $defaultValues[$arow['qid'].'~'.$abrow['qid']];
+                    }
                     // TODO SQrelevance for different scales? $fieldmap[$fieldname]['SQrelevance']=$abrow['relevance'];
                 }
             }
